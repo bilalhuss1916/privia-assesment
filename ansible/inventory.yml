@@ -1,0 +1,10 @@
+web:
+  hosts:
+    web-server1:
+      ansible_host: 34.125.79.15
+    web-server2:
+      ansible_host: 34.125.80.77
+  vars:
+    server_name: "{{ ansible_default_ipv4.address }}"
+    document_root: /var/www/html
+    app_root: "{{ ansible_hostname }}"
