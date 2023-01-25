@@ -15,13 +15,13 @@
   
     - name: Copy files to server's document root
       copy:
-        src: "{{ app_root }}"
+        src: templates/server.html
         dest: "{{ document_root }}"
         mode: preserve
   
     - name: Apply Nginx template
       template:
-        src: files/nginx.conf.j2
+        src: site.conf.j2
         dest: /etc/nginx/sites-available/default
       notify: Restart Nginx
 
